@@ -1,0 +1,16 @@
+<div class="container">
+  <h1>Restaurants list</h1>
+  <%= link_to "Create a Restaurant", new_restaurant_path %>
+  <% @restaurants.each do |r|  %>
+  <div class="card m-1">
+      <h2><%= r.name %>
+      <%= link_to restaurant_path(r) do %>
+        <i class="fas fa-search"></i>
+      <% end %>
+      </h2>
+      <p>City: <%= r.address %></p>
+      <p>Phone: <%= r.phone_number %></p>
+      <p>Category: <%= r.category %></p>
+  </div>
+    <% end %>
+</div>
