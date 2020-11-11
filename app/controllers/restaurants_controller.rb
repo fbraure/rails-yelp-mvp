@@ -6,6 +6,7 @@ class RestaurantsController < ApplicationController
   end
 
   def show
+    @new_review = Review.new
     @reviews = Review.where(:restaurant_id == @restaurant.id)
   end
 

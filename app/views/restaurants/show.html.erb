@@ -4,8 +4,11 @@
   <p>Phone: <%= @restaurant.phone_number %></p>
   <p>Category: <%= @restaurant.category %></p>
   <h2>Reviews :</h2>
-  <%= link_to"Create a Review", new_restaurant_review_path(@restaurant) %>
-  <% @reviews.each do |r| %>
+
+  <%# <%= link_to"Create a Review", new_restaurant_review_path(@restaurant) %>
+  <%= render "reviews/new", restaurant: @restaurant, review: @new_review %>
+
+  <% @reviews.reverse.each do |r| %>
     <div class="card m-1">
       <div class="stars d-flex">
         <% r.rating.times do %>
